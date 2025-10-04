@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+th{
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.aprovado{
+    color: green;
+    font-weight: bold;
+}
+
+.reprovado{
+    color: red;
+    font-weight: bold;
+}
+
+table{
+    display: none;
+}

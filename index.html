@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Formulário Escola Futuro+</title>
+    </head>
+    <body>
+        <h1> Formulário Escola Futuro+</h1>
+        <form id=" formCadastro">
+
+            <label>Nome do Aluno:</label>
+            <input type="text" id="aluno">
+
+            <label>Idade:</label>
+            <input type="number" id="idade">
+           
+            <label>Nota 1:</label>
+            <input type="number" id="nota1">
+            <label>Nota 2:</label>
+            <input type="number" id="nota2">
+        </form>
+            <button id="btnCadastrar">Cadastro</button>
+             
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Primeira nota</th>
+                        <th>Segunda nota</th>
+                        <th>Media</th>
+                        <th>Situacão</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAluno"></tbody>
+            </table>
+        <script src="dist/index.js"></script>
+
+    </body>
+</html>
