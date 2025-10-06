@@ -36,6 +36,10 @@ btnCadastrar.addEventListener("click", () => {
         alert("Digite um nome válido!");
         return;
     }
+    if (!isNaN(Number(nome))) {
+        alert("O nome não pode ser apenas números!");
+        return;
+    }
     if (isNaN(idade) || idade <= 0) {
         alert("Digite um idade válida!");
         return;
