@@ -6,21 +6,36 @@
         <link rel="stylesheet" href="style.css">
         <title>Formulário Escola Futuro+</title>
     </head>
+
     <body>
-        <h1> Formulário Escola Futuro+</h1>
+
+        <header>
+        <h1 id="header"> Formulário Escola Futuro+</h1>
+        </header>
+
+        <main>
         <form id=" formCadastro">
+            <div class="campo">
+                <label class="label">Nome do Aluno:</label>
+                <input type="text" id="aluno">
+            </div>  
 
-            <label>Nome do Aluno:</label>
-            <input type="text" id="aluno">
+            <div class="campo">
+                <label>Idade:</label>
+                <input type="number" id="idade">
+            </div>
 
-            <label>Idade:</label>
-            <input type="number" id="idade">
-           
-            <label>Nota 1:</label>
-            <input type="number" id="nota1">
-            <label>Nota 2:</label>
-            <input type="number" id="nota2">
+            <div class="campo">
+                <label>Nota 1:</label>
+                <input type="number" id="nota1">
+            </div>
+
+            <div class="campo">   
+                <label>Nota 2:</label>
+                <input type="number" id="nota2">
+            </div>
         </form>
+
             <button id="btnCadastrar">Cadastro</button>
              
             <table id="tabela">
@@ -36,6 +51,11 @@
                 </thead>
                 <tbody id="tabelaAluno"></tbody>
             </table>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Escola Futuro<b>+</b></p>
+        </footer>
         <script src="dist/index.js"></script>
 
     </body>
