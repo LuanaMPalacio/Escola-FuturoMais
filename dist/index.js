@@ -32,15 +32,11 @@ btnCadastrar.addEventListener("click", () => {
     const idade = Number(idadeAluno.value);
     const nota01 = Number(nota1.value);
     const nota02 = Number(nota2.value);
-    if (!nome) {
-        alert("Digite um nome válido!");
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        alert("O nome deve conter apenas letras!");
         return;
     }
-    if (!isNaN(Number(nome))) {
-        alert("O nome não pode ser apenas números!");
-        return;
-    }
-    if (isNaN(idade) || idade <= 0) {
+    if (isNaN(idade) || idade <= 0 || idade > 122) {
         alert("Digite um idade válida!");
         return;
     }
@@ -57,8 +53,7 @@ btnCadastrar.addEventListener("click", () => {
     linha.innerHTML = `
     <td>${aluno.nome}</td>
     <td>${aluno.idade}</td>
-    <td>${aluno.nota1}</td>
-    <td>${aluno.nota2}</td>
+    <td>${aluno.nota1}, ${aluno.nota2}</td>
     <td>${aluno.media.toFixed(1)}</td>`;
     const situacaoTd = document.createElement("td");
     situacaoTd.textContent = aluno.situacao;

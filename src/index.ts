@@ -32,7 +32,7 @@ const idadeAluno = document.getElementById("idade") as HTMLInputElement;
 const nota1 = document.getElementById("nota1") as HTMLInputElement;
 const nota2 = document.getElementById("nota2") as HTMLInputElement;
 const tabela = document.getElementById("tabela") as HTMLTableElement
-const tabelaCorpo = document.getElementById("tabelaAluno") as HTMLTableElement
+const tabelaCorpo = document.getElementById("tabelaAluno") as HTMLTableSectionElement
 
 
 btnCadastrar.addEventListener("click", () =>{
@@ -46,17 +46,12 @@ btnCadastrar.addEventListener("click", () =>{
     const nota01 = Number(nota1.value);
     const nota02 = Number(nota2.value);
 
-    if(!nome){
-        alert("Digite um nome válido!");
-        return;
-    }
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+    alert("O nome deve conter apenas letras!");
+    return;
+  }
 
-    if (!isNaN(Number(nome))) {
-        alert("O nome não pode ser apenas números!");
-        return;
-    }
-
-    if(isNaN(idade) || idade<=0){
+    if(isNaN(idade) || idade<=0 || idade > 122){
         alert("Digite um idade válida!")
         return;
     }
@@ -76,8 +71,7 @@ btnCadastrar.addEventListener("click", () =>{
     linha.innerHTML = `
     <td>${aluno.nome}</td>
     <td>${aluno.idade}</td>
-    <td>${aluno.nota1}</td>
-    <td>${aluno.nota2}</td>
+    <td>${aluno.nota1}, ${aluno.nota2}</td>
     <td>${aluno.media.toFixed(1)}</td>`
 
     const situacaoTd = document.createElement("td");
@@ -88,7 +82,6 @@ btnCadastrar.addEventListener("click", () =>{
        else{
         situacaoTd.classList.add("reprovado");
        }
-
     linha.appendChild(situacaoTd);
     tabelaCorpo.appendChild(linha);
     
