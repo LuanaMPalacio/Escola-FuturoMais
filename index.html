@@ -1,62 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Formulário Escola Futuro+</title>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Futuro+</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="cabecalho">
+      <img src="imagem/logo.png" alt="Logo Escola Futuro+" class="logo">
+      <div class="cabecalho-texto">
+        <h1>Escola Futuro+</h1>
+        <p>Gerencie o desempenho dos alunos com facilidade</p>
+      </div>
+  </header>
 
-    <body>
+  <main class="container">
+    <section class="form-section">
+      <div class="card">
+        <h2>📋 Cadastro de Aluno</h2>
 
-        <header>
-        <h1 id="header"> Formulário Escola Futuro+</h1>
-        </header>
+        <form id="formCadastro">
+          <div class="input-group">
+            <label for="aluno">Nome do Aluno</label>
+            <input type="text" id="aluno" placeholder="Digite o nome completo">
+          </div>
 
-        <main>
-        <form id=" formCadastro">
-            <div class="campo">
-                <label class="label">Nome do Aluno:</label>
-                <input type="text" id="aluno">
-            </div>  
+          <div class="input-group">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" placeholder="Ex: 16">
+          </div>
 
-            <div class="campo">
-                <label>Idade:</label>
-                <input type="number" id="idade">
+          <div class="input-group notas">
+            <div>
+              <label for="nota1">Nota 1</label>
+              <input type="number" id="nota1" step="0.1" placeholder="0 a 10">
             </div>
-
-            <div class="campo">
-                <label>Nota 1:</label>
-                <input type="number" id="nota1">
+            <div>
+              <label for="nota2">Nota 2</label>
+              <input type="number" id="nota2" step="0.1" placeholder="0 a 10">
             </div>
+          </div>
 
-            <div class="campo">   
-                <label>Nota 2:</label>
-                <input type="number" id="nota2">
-            </div>
+          <p id="erro" class="erro"></p>
+
+          <button type="button" id="btnCadastrar">Cadastrar</button>
         </form>
+      </div>
+    </section>
 
-            <button id="btnCadastrar">Cadastro</button>
-             
-            <table id="tabela">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Primeira nota</th>
-                        <th>Segunda nota</th>
-                        <th>Media</th>
-                        <th>Situacão</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaAluno"></tbody>
-            </table>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 Escola Futuro<b>+</b></p>
-        </footer>
-        <script src="dist/index.js"></script>
+    <section class="table-section">
+      <h2>📚 Lista de Alunos</h2>
+      <div class="table-container">
+        <table id="tabela" style="display: none;">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Notas</th>
+              <th>Média</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaAluno"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-    </body>
+  <footer>
+    <p>© 2025 Escola Futuro+</p>
+  </footer>
+
+  <script src="dist/index.js"></script>
+</body>
 </html>
